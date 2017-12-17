@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UNDO TEST"
+            android:padding="2dp"
+            android:onClick="testUndo"/>
+
+        <TextView
+            android:id="@+id/tv_is_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NO"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_undo_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/tv_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="UNDO"
+            android:layout_marginRight="8dp"
+            android:padding="2dp"
+            android:layout_gravity="center_vertical|right"/>
+
+    </FrameLayout>
+
+</LinearLayout>
