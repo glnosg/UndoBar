@@ -38,18 +38,22 @@ abstract class UndoBar {
         new UndoTask().execute();
     }
 
-    // Sets up OnClickListener
+    // Sets up UndoBar's OnClickListener
     private void setUpUndoBar() {
         mUndoBarView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // value of isUndoClicked is set to true
                 isUndoClicked = true;
+                // onUndoClicked method is triggered
                 onUndoClicked();
+                // UndoBar is hidden
                 hideUndoBar();
             }
         });
     }
 
+    // Handles process of showing UndoBar on the screen
     private void showUndoBar() {
         mUndoBarView.setVisibility(View.VISIBLE);
         mUndoBarView.setAlpha(0.0f);
@@ -59,6 +63,7 @@ abstract class UndoBar {
                 .setListener(null);
     }
 
+    // Handles process of removing UndoBar from the screen
     private void hideUndoBar() {
         mUndoBarView.animate()
                 .alpha(0.0f)
